@@ -1,0 +1,58 @@
+{
+  "mver": "1.2.0",
+  "control": {
+    "identity": {
+      "name": "Screenshot",
+      "version": "1.0",
+      "displayname": "Screenshot",
+      "icon": "./assets/logo.ico",
+      "type": "guid://56F45CF3-510F-4D53-B99D-80EF486AA185",
+      "start": "./control/index.html"
+    },
+    "metadata": {
+      "author": "M.Alsouki",
+      "keywords": []
+    },
+    "environment": {
+      "prerequisites": {
+        "renderingspace": {
+          "defaultwidth": 804,
+          "defaultheight": 320,
+          "unit": "px"
+        }
+      }
+    },
+    "contracts": {
+      "api": {
+        "methods": {
+          "Screenshot": {
+            "parameters": {},
+            "description": "Take a screen shot"
+          }
+        },
+        "events": {
+          "ScreenshotTaken": {
+            "arguments": {
+              "Taken": {
+                "type": "boolean"
+              }
+            },
+            "description": "event screen shot taken"
+          }
+        },
+        "properties": {
+          "backgroundColor": {
+            "$ref": "#/control/types/Color",
+            "default": 4294967295
+          }
+        }
+      }
+    },
+    "types": {
+      "Color": {
+        "$id": "http://tia.siemens.com/wincc-unified/types/s/color",
+        "type": "number"
+      }
+    }
+  }
+}
